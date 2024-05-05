@@ -42,7 +42,15 @@ public class UserService{
         User.setTeam(team);
         UserRepository.save(User);
     }
+    public User checkLogin(UserCredentials userCred)
+    {
 
+        Optional<User> user = this.UserRepository.findUserByUsername(userCred.getUsername());
+        if(user.isPresent() && user.get().getPassword().equals(userCred.getPassword()))
+            return user.get();
+        else
+            return null;
+    }
     public void deleteUser(Long id)
     {
         boolean exists = UserRepository.existsById(id);

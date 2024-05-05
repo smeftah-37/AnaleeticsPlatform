@@ -15,6 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long>{
     Optional<User> findUserByEmail(String email);
 
     Optional<User> findUserById(Long id);
+    Optional<User> findUserByUsername(String username);
      @EntityGraph(attributePaths = "team") // Specify the attribute path to the related entity
     List<User> findAll(); 
     

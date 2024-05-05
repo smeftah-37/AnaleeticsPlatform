@@ -31,6 +31,7 @@ public class User {
     private Team team;
     private String category;
     private String imageUrl;
+    private String password;
     @Transient
     private Integer age;
 
@@ -38,7 +39,7 @@ public class User {
     {
 
     }
-    public User(Long id, String name, String email, LocalDate dob,String category,String imageUrl,Integer teamId)
+    public User(Long id, String name, String email, LocalDate dob,String category,String imageUrl,Integer teamId,String password)
     {
         this.name = name;
         this.id = id;
@@ -46,14 +47,17 @@ public class User {
         this.email = email;
         this.category = category;
         this.imageUrl = imageUrl;
+        this.password = password;
     }
-    public User( String name, String email, LocalDate dob,String category,String imageUrl,Integer teamId)
+    public User( String name, String email, LocalDate dob,String category,String imageUrl,Integer teamId,String password)
     {
         this.name = name;
         this.dob = dob;
         this.email = email;
         this.category = category;
         this.imageUrl = imageUrl;
+        this.password = password;
+
 
 
     }
@@ -77,6 +81,9 @@ public class User {
     public String getEmail()
     {
         return email;
+    }
+    public String getPassword(){
+        return password;
     }
     public LocalDate getDob()
     {

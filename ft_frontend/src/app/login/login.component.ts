@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, QueryList, Renderer2, ViewChild, ViewChildren, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { User } from '../userInfo';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,],
+  imports: [CommonModule,ReactiveFormsModule, HttpClientModule],
   template: `
 
     <section class="Login-class">
-
+    <div>
       <div class="login">
       <div class="box" #box></div>
      
@@ -31,11 +32,13 @@ import { User } from '../userInfo';
       <input id="password" type="password" formControlName="password" required>
       <span for="password">password</span>
     </div>
+    <h3><a href="#" style="text-decoration: none; color: black">Lost password ? </a></h3>
     <div class="inputBox">
       <button type="submit" class="primary">Login</button>
   </div>
   </form>
-</div>
+</div></div>
+  <div>About <a href="#" style="text-decoration: none; color: white;font-size: 30px">Analeetics</a></div>
     </section>
   `,
   styleUrl: './login.component.css'

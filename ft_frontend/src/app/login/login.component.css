@@ -10,6 +10,8 @@
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 	height: 100vh;
+    flex-direction: column;
+    gap: 20%;
 }
 
 @keyframes gradient {

@@ -53,7 +53,11 @@ public class UserController{
     {
         this.UserService.addNewUser(User,id);
     }
-
+    @PostMapping("/coord")
+    public void loginUser(@RequestBody  UserCredentials userCred)
+    {
+        this.UserService.checkLogin(userCred);
+    }
     @DeleteMapping(path = "/{UserId}")
     public void deleteUser(@PathVariable("UserId") Long id)
     {
